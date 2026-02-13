@@ -28,7 +28,7 @@
 
 <script>
     // Create map centered on Ghana
-    var map = L.map('map').setView([7.9465, 12.4964], 6);
+    var map = L.map('map').setView([7.9465, -1.0232]);
 
     // Add OpenStreetMap layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -36,7 +36,7 @@
     }).addTo(map);
 
     // Add marker for Ghana
-    L.marker([41.9028, -1.0232])
+    L.marker([7.9465, -1.0232])
         .addTo(map)
         .bindPopup("Ghana")
         .openPopup();
