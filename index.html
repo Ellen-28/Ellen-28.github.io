@@ -27,7 +27,7 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
-    // Create map centered on Italy
+    // Create map centered on Ghana
     var map = L.map('map').setView([41.9028, 12.4964], 6);
 
     // Add OpenStreetMap layer
@@ -35,10 +35,10 @@
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Add marker for Rome
+    // Add marker for Ghana
     L.marker([41.9028, 12.4964])
         .addTo(map)
-        .bindPopup("Rome")
+        .bindPopup("Ghana")
         .openPopup();
 </script>
 
