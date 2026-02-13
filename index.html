@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Web Interface</title>
+    <title>My GIS Web Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100vh;
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>Welcome Ellen!</h1>
+<div id="map"></div>
 
-<p>This is my first web interface using GitHub.</p>
-
-<button onclick="sayHello()">Click Me</button>
-
-<p id="message"></p>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
-function sayHello() {
-    document.getElementById("message").innerHTML =
-    "Hello! Your interface is working!";
-}
+    // Create map centered on Italy
+    var map = L.map('map').setView([41.9028, 12.4964], 6);
+
+    // Add OpenStreetMap layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add marker for Rome
+    L.marker([41.9028, 12.4964])
+        .addTo(map)
+        .bindPopup("Rome")
+        .openPopup();
 </script>
 
 </body>
