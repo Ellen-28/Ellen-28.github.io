@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My GIS Web Map</title>
+    <title>My GIS Web Map - Ghana</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,19 +27,26 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
-    // Create map centered on Ghana
-    var map = L.map('map').setView([7.9465, -1.0232]);
+
+    // Center map on Ghana
+    var map = L.map('map').setView([7.9465, -1.0232], 6);
 
     // Add OpenStreetMap layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Add marker for Ghana
-    L.marker([7.9465, -1.0232])
+    // Add marker for Accra (capital of Ghana)
+    L.marker([5.6037, -0.1870])
         .addTo(map)
-        .bindPopup("Ghana")
+        .bindPopup("Accra, Ghana")
         .openPopup();
+
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
